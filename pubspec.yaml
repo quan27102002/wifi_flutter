@@ -1,12 +1,12 @@
-name: wifi_flutter
+name: wifi_flutter_vconnex
 description: A Flutter plugin for WiFi connectivity
-version: 0.2.1  # Sẽ giải thích về phiên bản ở bước tiếp theo
-homepage: https://github.com/your_username/wifi_flutter
-repository: https://github.com/your_username/wifi_flutter
+version: 0.2.1
+homepage: https://github.com/quan27102002/wifi_flutter
+repository: https://github.com/quan27102002/wifi_flutter
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
-  flutter: '>=3.3.0'
+  sdk: '>=2.12.13 <4.0.0'
+  flutter: '>=1.20.0'
 
 dependencies:
   flutter:

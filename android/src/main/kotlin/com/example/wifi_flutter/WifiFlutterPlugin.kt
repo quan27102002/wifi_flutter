@@ -35,6 +35,7 @@ class WifiFlutterPlugin: FlutterPlugin, MethodCallHandler {
   private lateinit var channel : MethodChannel
 
   private lateinit var context: Context
+  private var isCallbackHandled = false
 
   // holds the call while connected using ConnectivityManager.requestNetwork API
   private var networkCallback: ConnectivityManager.NetworkCallback? = null
@@ -313,6 +314,7 @@ class WifiFlutterPlugin: FlutterPlugin, MethodCallHandler {
 
   @RequiresApi(Build.VERSION_CODES.Q)
   fun connect(@NonNull specifier: WifiNetworkSpecifier, @NonNull result: Result){
+    isCallbackHandled = false
     if (this.networkCallback != null) {
       // there was already a connection, unregister to disconnect before proceeding
       connectivityManager.unregisterNetworkCallback(this.networkCallback!!)
@@ -326,16 +328,23 @@ class WifiFlutterPlugin: FlutterPlugin, MethodCallHandler {
     this.networkCallback = object : ConnectivityManager.NetworkCallback() {
       override fun onAvailable(network: Network) {
         super.onAvailable(network)
-        connectivityManager.bindProcessToNetwork(network)
-        result.success(true)
+        if (!isCallbackHandled) {
+          isCallbackHandled = true
+          connectivityManager.bindProcessToNetwork(network)
+          result.success(true)
+
+        }
         // cannot unregister callback here since it would disconnect form the network
       }
 
       override fun onUnavailable() {
         super.onUnavailable()
-        result.success(false)
-        //connectivityManager.unregisterNetworkCallback(this)
+        if (!isCallbackHandled) {
+          isCallbackHandled = true
+          result.success(false)
+        }
       }
+
     }
 
     val handler = Handler(Looper.getMainLooper())
