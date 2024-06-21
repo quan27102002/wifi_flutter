@@ -276,13 +276,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
-  wifi_flutter:
+  wifi_flutter_vconnex:
     dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.0.1"
+      name: wifi_flutter_vconnex
+      sha256: dabea9b2414618f555b20ae3949dcbc8d25d147457ad5a0fda0c771f3f85d9cd
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.1"
 sdks:
   dart: ">=3.3.4 <4.0.0"
   flutter: ">=3.3.0"

@@ -5,7 +5,7 @@
 import FlutterMacOS
 import Foundation
 
-import wifi_flutter
+import wifi_flutter_vconnex
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
   WifiFlutterPlugin.register(with: registry.registrar(forPlugin: "WifiFlutterPlugin"))

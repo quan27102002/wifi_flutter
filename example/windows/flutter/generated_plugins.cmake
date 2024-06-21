@@ -3,7 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  wifi_flutter
+  wifi_flutter_vconnex
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
