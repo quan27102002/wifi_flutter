@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
-import 'package:wifi_flutter_vconnex/wifi_flutter_vconnex.dart';
-
+import 'package:wifi_flutter_vconnex/wifi_flutter.dart';
 
 
 void main() {
@@ -31,6 +30,7 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       ssid = await PluginWifiConnect.ssid ?? '';
+      
     } on PlatformException {
       ssid = 'Failed to get ssid';
     }
