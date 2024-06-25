@@ -3,15 +3,15 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:wifi_flutter_vconnex/wifi_flutter.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyAppState createState() => _MyAppState();
 }
 
@@ -24,20 +24,13 @@ class _MyAppState extends State<MyApp> {
     initPlatformState();
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
     String ssid;
-    // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       ssid = await PluginWifiConnect.ssid ?? '';
-      
     } on PlatformException {
       ssid = 'Failed to get ssid';
     }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
     if (!mounted) return;
 
     setState(() {
@@ -48,12 +41,18 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: Text('Network SSID: $_ssid\n'),
+      debugShowCheckedModeBanner: false,
+      home: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text('Plugin example app'),
+          ),
+          body: Center(
+            child: Text(
+              'Network SSID: $_ssid\n',
+              style: TextStyle(),
+            ),
+          ),
         ),
       ),
     );

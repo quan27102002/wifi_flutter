@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'dart:io' show Platform;
 import 'package:flutter/services.dart';
-
-// TODO: Check this lint warning
 // ignore: avoid_classes_with_only_static_members
 class PluginWifiConnect {
   static const MethodChannel _channel = MethodChannel('plugin_wifi_connect');
