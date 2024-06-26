@@ -11,5 +11,8 @@
 ## 0.2.4
 
 * Update version Kotlin Android
+## 0.2.5
+
+* Update path for IOS
 
 
