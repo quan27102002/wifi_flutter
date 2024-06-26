@@ -18,7 +18,8 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.6
-  wifi_flutter_vconnex: ^0.2.1
+  wifi_flutter_vconnex:
+    path: ../
 
 dev_dependencies:
   integration_test:

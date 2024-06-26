@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
-import 'package:wifi_flutter_vconnex/wifi_flutter.dart';
+import 'package:wifi_flutter_vconnex/wifi_flutter_vconnex.dart';
 
 void main() {
   runApp(const MyApp());

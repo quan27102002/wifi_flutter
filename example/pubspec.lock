@@ -279,11 +279,10 @@ packages:
   wifi_flutter_vconnex:
     dependency: "direct main"
     description:
-      name: wifi_flutter_vconnex
-      sha256: dabea9b2414618f555b20ae3949dcbc8d25d147457ad5a0fda0c771f3f85d9cd
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.1"
+      path: ".."
+      relative: true
+    source: path
+    version: "0.2.4"
 sdks:
   dart: ">=3.3.4 <4.0.0"
-  flutter: ">=3.3.0"
+  flutter: ">=1.20.0"

@@ -3,7 +3,7 @@
 # Run `pod lib lint wifi_flutter.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'wifi_flutter'
+  s.name             = 'wifi_flutter_vconnex'
   s.version          = '0.0.1'
   s.summary          = 'A new Flutter project.'
   s.description      = <<-DESC
